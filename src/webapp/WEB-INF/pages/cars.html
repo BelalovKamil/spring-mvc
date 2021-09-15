@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+<h1>Cars:</h1>
+<table border="1">
+    <tr>
+        <th>№</th>
+        <th>Марка</th>
+        <th>Год выпуска</th>
+        <th>Объем двигателя</th>
+    </tr>
+    <tr th:each="car, iterator : ${cars}">
+        <td th:text="${iterator.count}">№</td>
+        <td th:utext="${car.getModel()}">Марка</td>
+        <td th:utext="${car.getYearOfIssue()}">Год выпуска</td>
+        <td th:utext="${car.getEngineVolume()}">Объем двигателя</td>
+    </tr>
+</table>
+</body>
+</html>
